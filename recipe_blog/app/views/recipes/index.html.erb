@@ -1,0 +1,10 @@
+<h1>Recipes Index</h1>
+<hr>
+<% @recipes.each do |recipe| %>
+  <p><%= recipe.name %> - <%= recipe.instructions %> <%= link_to "View Recipe", recipe_path(recipe) %></p>
+<% end %>
+
+<% if current_user %>
+  <hr>
+  <%= link_to "Add Recipe", new_recipe_path %>
+<% end %>
